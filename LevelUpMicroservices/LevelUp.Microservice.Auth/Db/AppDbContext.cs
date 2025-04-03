@@ -17,6 +17,8 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users { get; set; }
 
+    public DbSet<OutboxMessage> OutboxMessages { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         => modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 }
